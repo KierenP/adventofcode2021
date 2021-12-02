@@ -1,0 +1,22 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.8", "3.9", "3.10"]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Check answers
+      run: |
+        if [[ $(cd "Day 1" && python Part1.py) -ne 1466 ]]; then exit 1; fi
+        if [[ $(cd "Day 1" && python Part2.py) -ne 1491 ]]; then exit 1; fi
+        
+        
