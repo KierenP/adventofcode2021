@@ -24,4 +24,5 @@ jobs:
         if [[ $(cd "Day 3" && python "Part 2.py") -ne 482500 ]]; then exit 1; fi;
         if [[ $(cd "Day 4" && python "Part 1.py") -ne 71708 ]]; then exit 1; fi;
         if [[ $(cd "Day 4" && python "Part 2.py") -ne 34726 ]]; then exit 1; fi;
-  
+        if [[ $(cd "Day 5" && python "Part 1.py") -ne 7085 ]]; then exit 1; fi;
+        if [[ $(cd "Day 5" && python "Part 2.py") -ne 20271 ]]; then exit 1; fi;
