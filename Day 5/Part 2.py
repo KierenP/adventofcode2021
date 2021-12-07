@@ -45,7 +45,7 @@ class vent:
     def __repr__(self):
         return str("{") + str(self.a) + str(", ") + str(self.b) + str("}")
 
-    def intersection(self, other):       
+    def intersection(self, other):
         return self.points.intersection(other.points)
 
 vents = []
@@ -60,6 +60,6 @@ intersections = set()
 for vent_1 in vents:
     for vent_2 in vents:
         if vent_1 != vent_2:
-            intersections = intersections.union(vent_1.intersection(vent_2))
+            intersections.update(vent_1.intersection(vent_2))
 
 print(len(intersections))
