@@ -14,15 +14,23 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
-    - name: Check answers
+    - name: Check Day 1
       run: |
         if [[ $(cd "Day 1" && python "Part 1.py") -ne 1466 ]]; then exit 1; fi;
         if [[ $(cd "Day 1" && python "Part 2.py") -ne 1491 ]]; then exit 1; fi;
+    - name: Check Day 2
+      run: |
         if [[ $(cd "Day 2" && python "Part 1.py") -ne 2019945 ]]; then exit 1; fi;
         if [[ $(cd "Day 2" && python "Part 2.py") -ne 1599311480 ]]; then exit 1; fi;
+    - name: Check Day 3
+      run: |
         if [[ $(cd "Day 3" && python "Part 1.py") -ne 1307354 ]]; then exit 1; fi;
         if [[ $(cd "Day 3" && python "Part 2.py") -ne 482500 ]]; then exit 1; fi;
+    - name: Check Day 4
+      run: |
         if [[ $(cd "Day 4" && python "Part 1.py") -ne 71708 ]]; then exit 1; fi;
         if [[ $(cd "Day 4" && python "Part 2.py") -ne 34726 ]]; then exit 1; fi;
+    - name: Check Day 5
+      run: |
         if [[ $(cd "Day 5" && python "Part 1.py") -ne 7085 ]]; then exit 1; fi;
         if [[ $(cd "Day 5" && python "Part 2.py") -ne 20271 ]]; then exit 1; fi;
