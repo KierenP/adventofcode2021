@@ -46,3 +46,7 @@ jobs:
       run: |
         if [[ $(cd "Day 8" && python "Part 1.py") -ne 255 ]]; then exit 1; fi;
         if [[ $(cd "Day 8" && python "Part 2.py") -ne 982158 ]]; then exit 1; fi;
+    - name: Check Day 9
+      run: |
+        if [[ $(cd "Day 9" && python "Part 1.py") -ne 491 ]]; then exit 1; fi;
+        if [[ $(cd "Day 9" && python "Part 2.py") -ne 1075536 ]]; then exit 1; fi;
