@@ -1,5 +1,5 @@
 from collections import Counter
-from functools import cache
+from functools import lru_cache
 
 with open("Input.txt", "r") as file:
 
@@ -12,7 +12,7 @@ with open("Input.txt", "r") as file:
         pair = line.strip().split(' -> ')
         pairs[tuple(pair[0])] = pair[1]
 
-@cache
+@lru_cache(maxsize=None)
 def grow(sub_polymer, depth, max_depth):
     global cache
 
