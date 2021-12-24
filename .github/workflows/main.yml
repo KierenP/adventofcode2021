@@ -16,49 +16,63 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Check Day 1
       run: |
-        if [[ $(cd "Day 1" && python "Part 1.py") -ne 1466 ]]; then exit 1; fi;
-        if [[ $(cd "Day 1" && python "Part 2.py") -ne 1491 ]]; then exit 1; fi;
+        if [[ $(cd Day_1 && python Part_1.py) -ne 1466 ]]; then exit 1; fi;
+        if [[ $(cd Day_1 && python Part_2.py) -ne 1491 ]]; then exit 1; fi;
     - name: Check Day 2
       run: |
-        if [[ $(cd "Day 2" && python "Part 1.py") -ne 2019945 ]]; then exit 1; fi;
-        if [[ $(cd "Day 2" && python "Part 2.py") -ne 1599311480 ]]; then exit 1; fi;
+        if [[ $(cd Day_2 && python Part_1.py) -ne 2019945 ]]; then exit 1; fi;
+        if [[ $(cd Day_2 && python Part_2.py) -ne 1599311480 ]]; then exit 1; fi;
     - name: Check Day 3
       run: |
-        if [[ $(cd "Day 3" && python "Part 1.py") -ne 1307354 ]]; then exit 1; fi;
-        if [[ $(cd "Day 3" && python "Part 2.py") -ne 482500 ]]; then exit 1; fi;
+        if [[ $(cd Day_3 && python Part_1.py) -ne 1307354 ]]; then exit 1; fi;
+        if [[ $(cd Day_3 && python Part_2.py) -ne 482500 ]]; then exit 1; fi;
     - name: Check Day 4
       run: |
-        if [[ $(cd "Day 4" && python "Part 1.py") -ne 71708 ]]; then exit 1; fi;
-        if [[ $(cd "Day 4" && python "Part 2.py") -ne 34726 ]]; then exit 1; fi;
+        if [[ $(cd Day_4 && python Part_1.py) -ne 71708 ]]; then exit 1; fi;
+        if [[ $(cd Day_4 && python Part_2.py) -ne 34726 ]]; then exit 1; fi;
     - name: Check Day 5
       run: |
-        if [[ $(cd "Day 5" && python "Part 1.py") -ne 7085 ]]; then exit 1; fi;
-        if [[ $(cd "Day 5" && python "Part 2.py") -ne 20271 ]]; then exit 1; fi;
+        if [[ $(cd Day_5 && python Part_1.py) -ne 7085 ]]; then exit 1; fi;
+        if [[ $(cd Day_5 && python Part_2.py) -ne 20271 ]]; then exit 1; fi;
     - name: Check Day 6
       run: |
-        if [[ $(cd "Day 6" && python "Part 1.py") -ne 351188 ]]; then exit 1; fi;
-        if [[ $(cd "Day 6" && python "Part 2.py") -ne 1595779846729 ]]; then exit 1; fi;
+        if [[ $(cd Day_6 && python Part_1.py) -ne 351188 ]]; then exit 1; fi;
+        if [[ $(cd Day_6 && python Part_2.py) -ne 1595779846729 ]]; then exit 1; fi;
     - name: Check Day 7
       run: |
-        if [[ $(cd "Day 7" && python "Part 1.py") -ne 356958 ]]; then exit 1; fi;
-        if [[ $(cd "Day 7" && python "Part 2.py") -ne 105461913 ]]; then exit 1; fi;
+        if [[ $(cd Day_7 && python Part_1.py) -ne 356958 ]]; then exit 1; fi;
+        if [[ $(cd Day_7 && python Part_2.py) -ne 105461913 ]]; then exit 1; fi;
     - name: Check Day 8
       run: |
-        if [[ $(cd "Day 8" && python "Part 1.py") -ne 255 ]]; then exit 1; fi;
-        if [[ $(cd "Day 8" && python "Part 2.py") -ne 982158 ]]; then exit 1; fi;
+        if [[ $(cd Day_8 && python Part_1.py) -ne 255 ]]; then exit 1; fi;
+        if [[ $(cd Day_8 && python Part_2.py) -ne 982158 ]]; then exit 1; fi;
     - name: Check Day 9
       run: |
-        if [[ $(cd "Day 9" && python "Part 1.py") -ne 491 ]]; then exit 1; fi;
-        if [[ $(cd "Day 9" && python "Part 2.py") -ne 1075536 ]]; then exit 1; fi;
+        if [[ $(cd Day_9 && python Part_1.py) -ne 491 ]]; then exit 1; fi;
+        if [[ $(cd Day_9 && python Part_2.py) -ne 1075536 ]]; then exit 1; fi;
     - name: Check Day 10
       run: |
-        if [[ $(cd "Day 10" && python "Part 1.py") -ne 358737 ]]; then exit 1; fi;
-        if [[ $(cd "Day 10" && python "Part 2.py") -ne 4329504793 ]]; then exit 1; fi;
+        if [[ $(cd Day_10 && python Part_1.py) -ne 358737 ]]; then exit 1; fi;
+        if [[ $(cd Day_10 && python Part_2.py) -ne 4329504793 ]]; then exit 1; fi;
     - name: Check Day 11
       run: |
-        if [[ $(cd "Day 11" && python "Part 1.py") -ne 1649 ]]; then exit 1; fi;
-        if [[ $(cd "Day 11" && python "Part 2.py") -ne 256 ]]; then exit 1; fi;
+        if [[ $(cd Day_11 && python Part_1.py) -ne 1649 ]]; then exit 1; fi;
+        if [[ $(cd Day_11 && python Part_2.py) -ne 256 ]]; then exit 1; fi;
     - name: Check Day 12
       run: |
-        if [[ $(cd "Day 12" && python "Part 1.py") -ne 3497 ]]; then exit 1; fi;
-        if [[ $(cd "Day 12" && python "Part 2.py") -ne 93686 ]]; then exit 1; fi;
+        if [[ $(cd Day_12 && python Part_1.py) -ne 3497 ]]; then exit 1; fi;
+        if [[ $(cd Day_12 && python Part_2.py) -ne 93686 ]]; then exit 1; fi;
+    - name: Check Day 13
+      run: |
+        if [[ $(cd Day_13 && python Part_1.py) -ne 802 ]]; then exit 1; fi;
+        cd Day_13
+        python Part_2.py > actual.txt
+        if ! cmp -s "actual.txt" "part_2_answer.txt"; then exit 1; fi;
+    - name: Check Day 14
+      run: |
+        if [[ $(cd Day_14 && python Part_1.py) -ne 3284 ]]; then exit 1; fi;
+        if [[ $(cd Day_14 && python Part_2.py) -ne 4302675529689 ]]; then exit 1; fi;
+    - name: Check Day 15
+      run: |
+        if [[ $(cd Day_15 && python Part_1.py) -ne 398 ]]; then exit 1; fi;
+        if [[ $(cd Day_15 && python Part_2.py) -ne 2817 ]]; then exit 1; fi;
